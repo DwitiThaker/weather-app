@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './components/css/WeatherMain.css'
+import './components/css/weatherMain.css'
 import { MainWindow } from './components/weather/WeatherMain'
 import { PredictionCards} from "./components/weather/PredictionCards";
 import { WeekPrediction } from "./components/weather/WeekPediction";
