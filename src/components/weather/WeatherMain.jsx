@@ -26,15 +26,9 @@ export const MainWindow = ({ setHourData , setWeekData , setHasSearched}) => {
 
   const search = async (e) => {
     try {
-      const KEY = import.meta.env.VITE_VISUALCROSSING_KEY;
-
-      const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${encodeURIComponent(
-        text
-      )}?unitGroup=metric&key=${KEY}`;
-
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log(data);
+      const response = await fetch(`/.netlify/functions/weather?location=${text}`);
+  const data = await response.json();
+  console.log(data);
 
       const today = data.days?.[0] || {};
 
